@@ -1,0 +1,53 @@
+<!DOCTYPE html >
+<html>
+<head>
+	<meta charset="UTF-8">
+
+	<style>
+		table, th , td  {border: 1px solid grey; border-collapse: collapse; padding: 5pt;}
+		table tr:nth-child(odd)	{background-color: #f1f1f1;}
+		table tr:nth-child(even) {background-color: #ffffff;}
+	</style>
+
+	<script src= "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+	<script src= "edit.js"></script>
+
+</head>
+
+<body ng-app="myApp" ng-controller="myController">
+
+<h1>Recipe Collection</h1>
+<hr>
+<h2>Edit Recipe</h2>
+<p>Enter id:<input type = "text" ng-model = "id" ></p><br>
+<button type = "submit" ng-click = "display();">Display</button></p><br>
+<hr>
+<table>
+  <tr>
+   <td>id: {{ recipe.id }}</td>
+  </tr>
+  <tr>
+   <td>name:<input type = "text" ng-model = "recipe.name"></input></td>
+  </tr>
+  <tr>
+   <td>serves:<input type = "text" ng-model = "recipe.serves"></input></td>
+  </tr>
+  <tr>
+   <td>ingredients:<input type = "text" ng-model = "recipe.ingredients"></input></td>
+  </tr>
+  <tr>
+   <td>remarks:<input type = "text" ng-model = "recipe.remarks"></input></td>
+  </tr>
+ 
+</table>
+<br>
+<textarea rows = "5" cols="80" ng-model = "recipe.steps">
+    
+</textarea>
+<br>
+<button type = "submit" ng-click = "edit();">Submit Edit</button><br>
+<button type="button" onclick="window.location.href='main.html'">Return to Main Page</button>
+
+</body>
+</html>
+
